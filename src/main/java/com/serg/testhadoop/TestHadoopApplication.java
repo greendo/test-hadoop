@@ -30,16 +30,16 @@ public class TestHadoopApplication {
 		// Set HADOOP user
 		System.setProperty("HADOOP_USER_NAME", "hduser");
 		System.setProperty("hadoop.home.dir", "/");
-		Path hdfswritepath = new Path("testpath/testfile.txt");
-//		String hdfsuri = "hdfs://localhost:9000";
+		Path hdfswritepath = new Path("testfile.txt");
+
         String hdfsuri = "hdfs://vps613231.ovh.net:9000";
 		// ====== Init HDFS File System Object
 		Configuration conf = new Configuration();
 		// Because of Maven
-		conf.set("fs.hdfs.impl", org.apache.hadoop.hdfs.DistributedFileSystem.class.getName());
-		conf.set("fs.file.impl", org.apache.hadoop.fs.LocalFileSystem.class.getName());
-		conf.set("fs.default.name", hdfsuri);
-		conf.setBoolean("dfs.support.append", true);
+//		conf.set("fs.hdfs.impl", org.apache.hadoop.hdfs.DistributedFileSystem.class.getName());
+//		conf.set("fs.file.impl", org.apache.hadoop.fs.LocalFileSystem.class.getName());
+//		conf.set("fs.default.name", hdfsuri);
+//		conf.setBoolean("dfs.support.append", true);
 
 		FileSystem fs = FileSystem.get(URI.create(hdfsuri), conf);
 		//Init output stream
