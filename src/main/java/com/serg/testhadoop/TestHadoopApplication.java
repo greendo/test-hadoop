@@ -31,8 +31,8 @@ public class TestHadoopApplication {
 		System.setProperty("HADOOP_USER_NAME", "hduser");
 		System.setProperty("hadoop.home.dir", "/");
 		Path hdfswritepath = new Path("testpath/testfile.txt");
-		String hdfsuri = "hdfs://localhost:9000";
-//        String hdfsuri = "hdfs://vps613231.ovh.net:9000";
+//		String hdfsuri = "hdfs://localhost:9000";
+        String hdfsuri = "hdfs://vps613231.ovh.net:9000";
 		// ====== Init HDFS File System Object
 		Configuration conf = new Configuration();
 		// Because of Maven
